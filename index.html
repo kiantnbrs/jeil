@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeil Arianne Anoba ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#2a1f2d;
+  color:white;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* CINEMATIC INTRO */
+body::before{
+  content:"";
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:#2a1f2d;
+  z-index:9999;
+  animation:introFade 2.5s forwards;
+}
+@keyframes introFade{
+  0%{opacity:1;}
+  100%{opacity:0;visibility:hidden;}
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.2);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+nav h2{font-family:'Playfair Display',serif;color:#ff6f91;}
+.volume-control{display:flex;align-items:center;gap:10px;}
+input[type=range]{width:100px;}
+
+/* CINEMATIC BG */
+.cinematic-bg{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  pointer-events:none;
+  z-index:-2;
+  background:linear-gradient(120deg,#3b2a3b,#5e3a5e,#7a4d7a);
+  overflow:hidden;
+}
+
+/* PARTICLES */
+.particle{
+  position:absolute;
+  font-size:16px;
+  opacity:0.8;
+  animation:moveUp linear infinite;
+}
+@keyframes moveUp{
+  0%{transform:translateY(0) rotate(0deg); opacity:0;}
+  10%{opacity:0.9;}
+  100%{transform:translateY(-800px) rotate(360deg); opacity:0;}
+}
+
+/* MAIN SECTION */
+.main-section{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-start;
+  min-height:100vh;
+  padding-top:100px;
+  gap:40px;
+  position:relative;
+  z-index:1;
+}
+
+/* VIDEOS */
+.video-section{
+  flex:1;
+  min-width:300px;
+  max-width:600px;
+  display:flex;
+  flex-direction:row;
+  gap:20px;
+  position:sticky;
+  top:100px;
+  z-index:2;
+}
+.video-card{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  flex:1;
+}
+.video-card video{
+  width:100%;
+  border-radius:20px;
+}
+
+/* SLIDESHOW */
+.slideshow-card{
+  flex:1;
+  min-width:300px;
+  max-width:500px;
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+}
+.slide-container{
+  position:relative;
+  width:100%;
+  border-radius:20px;
+  overflow:hidden;
+}
+.slide{
+  display:none;
+  width:100%;
+  border-radius:20px;
+}
+.fade{animation:fade 0.8s;}
+@keyframes fade{from{opacity:.4;}to{opacity:1;}}
+
+/* CARDS ENVELOPES */
+.proposal-card, .monthsary-card{
+  margin-top:10px;
+  background:#3c2f3c;
+  padding:15px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  color:#ff6f91;
+  font-family:'Playfair Display',serif;
+  line-height:1.5;
+  text-align:center;
+  cursor:pointer;
+  perspective:800px;
+  position:relative;
+  max-width:300px;
+}
+.envelope{
+  background:#fdf0f5;
+  border-radius:12px;
+  padding:15px;
+  color:#2a1f2d;
+  transform:translateY(0px);
+  transition:0.7s;
+  overflow:hidden;
+}
+.proposal-card.open .envelope,
+.monthsary-card.open .envelope{
+  transform:translateY(-10px);
+}
+
+/* FLOATING HEARTS */
+.floating{
+  position:fixed;
+  font-size:18px;
+  animation:floatUp 5s linear forwards;
+}
+@keyframes floatUp{
+  0%{transform:translateY(0) rotate(0deg);opacity:1;}
+  100%{transform:translateY(-400px) rotate(360deg);opacity:0;}
+}
+
+footer{padding:40px;text-align:center;background:#2a1f2d;}
+@media(max-width:900px){
+  .main-section{flex-direction:column;padding-top:50px;}
+  .video-section, .slideshow-card{min-width:90%;}
+  .video-section{flex-direction:column;}
+  .slideshow-card{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<div class="cinematic-bg" id="cinematicBg"></div>
+
+<audio id="bgMusic" loop>
+  <source src="Dito Sakin - Earl Agustin (Official Lyric Video).mp4" type="audio/mpeg">
+</audio>
+
+<nav>
+<h2>Jeil ❤️</h2>
+<div class="volume-control">
+🔊 <input type="range" min="0" max="1" step="0.01" value="0.5" id="volumeSlider">
+</div>
+</nav>
+
+<section class="main-section">
+  <!-- TWO VIDEOS -->
+  <div class="video-section">
+    <div class="video-card">
+      <video id="video1" autoplay loop muted>
+        <source src="6f102e65-284c-4431-8d54-894ff2faac5f.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-card">
+      <video id="video2" autoplay loop muted>
+        <source src="78649476-da95-4a41-a760-622d6d4e1493.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- SLIDESHOW + CARDS -->
+  <div class="slideshow-card">
+    <div class="slide-container">
+      <img class="slide fade" src="kian6.jpg">
+      <img class="slide fade" src="kian2.jpg">
+      <img class="slide fade" src="kian3.jpg">
+      <img class="slide fade" src="kian1.jpg">
+      <img class="slide fade" src="kian4.jpg">
+      <img class="slide fade" src="kian5.jpg">
+      <img class="slide fade" src="kian7.jpg">
+      <img class="slide fade" src="kian8.jpg">
+    </div>
+
+    <!-- Proposal Envelope + Picture -->
+    <section style="display:flex; gap:15px; align-items:flex-start; flex-wrap:wrap;">
+      <div class="proposal-card" onclick="openEnvelope(this)">
+        <div class="envelope">
+          <div class="proposal-message" style="opacity:0; font-size:0.9rem;">
+            You are the melody to my heart, the warmth in my soul, and the smile I carry everywhere. ❤️ 🌸<br><br>
+            With you, every moment feels like home. Your laughter is the spark that lights up my days, your kindness is the gentle breeze that calms my worries, and your love is the anchor that keeps me grounded in every storm. 💖<br><br>
+            I cherish every memory we've created, every quiet moment of togetherness, and every adventure that awaits us. With you, life is fuller, brighter, and infinitely more beautiful. You are my partner, my confidante, and my inspiration. 🌸<br><br>
+            Forever and always, I am yours, heart, soul, and everything in between. ❤️ 💖<br><br>
+            <strong>Kian 💍</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-card">
+      <video id="video2" autoplay loop muted>
+        <source src="c7d5e7b5-4ffa-43e3-98a4-a7bcdfeff370.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <!-- Monthsary Envelope + Picture -->
+    <section style="display:flex; gap:15px; align-items:flex-start; flex-wrap:wrap; margin-top:25px;">
+      <div class="monthsary-card" onclick="openEnvelope(this)">
+        <div class="envelope">
+          <div class="monthsary-message" style="opacity:0; font-size:0.9rem;">
+            <strong style="font-size:1.1rem;">Happy Monthsary, My Love! ❤️🌸💖</strong><br><br>
+            Every day with you is a beautiful chapter of laughter, warmth, and unforgettable moments.  
+            You light up my life with your smile, comfort me with your love, and inspire me to be the best version of myself.  
+            Our months together have been a journey of pure joy, and I treasure every second we share. 💌💖  
+            I can’t wait for the adventures, quiet moments, and countless memories still ahead of us.  
+            Thank you for being mine, today and always. ❤️🌸<br><br>
+            <img src="kian10.jpg" style="width:100%; border-radius:12px; margin-top:10px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+            <img src="kian11.jpg" style="width:100%; border-radius:12px; margin-top:10px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+          </div>
+        </div>
+      </div>
+
+      <div style="flex:1; max-width:200px;">
+        <img src="kian3 .jpg" alt="Monthsary Picture" style="width:100%; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+      </div>
+    </section>
+
+  </div>
+</section>
+
+<footer>Made with love by Kian ❤️</footer>
+
+<script>
+/* AUTO MUSIC + VIDEO */
+const music=document.getElementById("bgMusic");
+const video1=document.getElementById("video1");
+const video2=document.getElementById("video2");
+music.volume=0;
+video1.volume=0.5;
+video2.volume=0.5;
+function fadeInMusic(){
+  let vol=0;
+  music.play().catch(()=>{});
+  video1.play().catch(()=>{});
+  video2.play().catch(()=>{});
+  let fade=setInterval(()=>{
+    if(vol<0.5){vol+=0.02;music.volume=vol;}
+    else{clearInterval(fade);}
+  },200);
+}
+window.addEventListener("load",fadeInMusic);
+document.addEventListener("click",fadeInMusic);
+
+/* VOLUME CONTROL */
+document.getElementById("volumeSlider").addEventListener("input",function(){
+  music.volume=this.value;
+  video1.volume=this.value;
+  video2.volume=this.value;
+});
+
+/* SLIDESHOW */
+let slideIndex=0;
+showSlides();
+function showSlides(){
+  let slides=document.getElementsByClassName("slide");
+  for(let i=0;i<slides.length;i++){ slides[i].style.display="none"; }
+  slideIndex++;
+  if(slideIndex>slides.length){slideIndex=1}
+  slides[slideIndex-1].style.display="block";
+  setTimeout(showSlides,1000);
+}
+
+/* CINEMATIC PARTICLES */
+const bgContainer=document.getElementById("cinematicBg");
+const icons=['❤️','🌸','💖','✨','💌'];
+function createParticle(){
+  const particle=document.createElement('div');
+  particle.className='particle';
+  particle.style.left=Math.random()*100+'vw';
+  particle.style.top=Math.random()*100+'vh';
+  particle.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+  particle.style.fontSize=10+Math.random()*15+'px';
+  bgContainer.appendChild(particle);
+  setTimeout(()=>particle.remove(),8000);
+}
+setInterval(createParticle,200);
+
+/* OPEN ENVELOPE FUNCTION */
+function openEnvelope(card){
+  const msg = card.querySelector(".proposal-message") || card.querySelector(".monthsary-message");
+  card.classList.toggle("open");
+  if(msg) msg.style.opacity = msg.style.opacity=='1'?'0':'1';
+
+  for(let i=0;i<20;i++){
+    let heart=document.createElement("div");
+    heart.className="floating";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.bottom="0px";
+    heart.style.fontSize=12+Math.random()*15+"px";
+    heart.innerHTML=icons[Math.floor(Math.random()*icons.length)];
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),3500);
+  }
+}
+</script>
+</body>
+</html>
