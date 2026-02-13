@@ -172,11 +172,61 @@ input[type=range]{width:100px;}
 }
 
 footer{padding:40px;text-align:center;background:#2a1f2d;}
+
+/* MOBILE RESPONSIVE */
 @media(max-width:900px){
-  .main-section{flex-direction:column;padding-top:50px;}
-  .video-section, .slideshow-card{min-width:90%;}
-  .video-section{flex-direction:column;}
-  .slideshow-card{flex-direction:column;}
+  .main-section{
+    flex-direction:column;
+    padding-top:60px;
+    gap:25px;
+  }
+
+  .video-section{
+    flex-direction:column;
+    max-width:100%;
+    top:60px;
+    gap:15px;
+  }
+
+  .video-card{
+    flex:1 1 100%;
+    max-width:100%;
+  }
+
+  .slideshow-card{
+    max-width:100%;
+    gap:20px;
+  }
+
+  /* Envelopes adjust */
+  .proposal-card, .monthsary-card{
+    max-width:90%;
+    margin:0 auto;
+  }
+
+  /* Sections with picture + envelope stack */
+  section[style*="display:flex;"]{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  section[style*="display:flex;"] img{
+    max-width:90%;
+    margin-top:10px;
+  }
+
+  /* Fonts smaller for mobile */
+  .proposal-card .envelope, .monthsary-card .envelope{
+    font-size:0.85rem;
+  }
+
+  nav h2{
+    font-size:1.2rem;
+  }
+
+  input[type=range]{
+    width:70px;
+  }
 }
 </style>
 </head>
@@ -241,6 +291,7 @@ footer{padding:40px;text-align:center;background:#2a1f2d;}
       <video id="video2" autoplay loop muted>
         <source src="c7d5e7b5-4ffa-43e3-98a4-a7bcdfeff370.mp4" type="video/mp4">
       </video>
+    </div>
     </section>
 
     <!-- Monthsary Envelope + Picture -->
@@ -283,10 +334,7 @@ function fadeInMusic(){
   music.play().catch(()=>{});
   video1.play().catch(()=>{});
   video2.play().catch(()=>{});
-  let fade=setInterval(()=>{
-    if(vol<0.5){vol+=0.02;music.volume=vol;}
-    else{clearInterval(fade);}
-  },200);
+  let fade=setInterval(()=>{if(vol<0.5){vol+=0.02;music.volume=vol;}else{clearInterval(fade);}},200);
 }
 window.addEventListener("load",fadeInMusic);
 document.addEventListener("click",fadeInMusic);
